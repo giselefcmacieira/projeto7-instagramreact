@@ -43,9 +43,7 @@ export default function Posts(){
         const numCurtidasAtual = Number(numCurtidas) + 1;
         if(curtida.name === 'heart-outline'){
             numCurtida.innerHTML = numCurtidasAtual;
-        }//se curtida.name='heart-outline';
-        
-        //const numCurtidasAtualizado = numCurtidasAtual.replace(',','.');
+        }
         curtida.classList.add('vermelho');
         curtida.name = 'heart';
     }
@@ -53,10 +51,10 @@ export default function Posts(){
     return(
         <div class="posts">
             {infPosts.map((post, i) => 
-                <div class="post">
+                <div data-test="post" class="post">
                     <div class="topo">
                         <div class="usuario">
-                            <img src={post.imguser} alt={post.user}/>
+                            <img data-test="post-image" src={post.imguser} alt={post.user}/>
                             {post.user}
                         </div>
                         <div class="acoes">
@@ -69,19 +67,19 @@ export default function Posts(){
                     <div class="fundo">
                         <div class="acoes">
                             <div>
-                                <ion-icon class="curtida" name="heart-outline" onClick = {curtida}></ion-icon>
+                                <ion-icon data-test="like-post" class="curtida" name="heart-outline" onClick = {curtida}></ion-icon>
                                 <ion-icon name="chatbubble-outline"></ion-icon>
                                 <ion-icon name="paper-plane-outline"></ion-icon>
                             </div>
                             <div class="salvar">
-                                <ion-icon name="bookmark-outline" onClick = {salvar}></ion-icon>
+                                <ion-icon data-test="save-post" name="bookmark-outline" onClick = {salvar}></ion-icon>
                             </div>
                         </div>
 
                         <div class="curtidas">
                             <img src={post.likeimg} alt={post.likeuser}/>
                             <div class="texto">
-                                Curtido por <strong>{post.likeuser}</strong> e <strong>outras <p class="num-curtidas">{post.likenum}</p> pessoas</strong>
+                                Curtido por <strong>{post.likeuser}</strong> e <strong>outras <p data-test="likes-number" class="num-curtidas">{post.likenum}</p> pessoas</strong>
                             </div>
                         </div>
                     </div>

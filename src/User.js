@@ -18,11 +18,11 @@ export default function User(){
 
     return(
         <div class="usuario">
-          <img src={profileimg} alt="imagem de perfil" onClick = {alterarFoto} />
+          <img data-test="profile-image" src={profileimg} alt="imagem de perfil" onClick = {alterarFoto} />
           <div class="texto">
             <span>
-              <strong>{user}</strong>
-              <ion-icon name="pencil" onClick = {alterarNome}></ion-icon>
+              <strong data-test="name">{user}</strong>
+              <ion-icon data-test="edit-name" name="pencil" onClick = {alterarNome}></ion-icon>
             </span>
           </div>
         </div>
