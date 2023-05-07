@@ -78,8 +78,8 @@ export default function Posts(){
 
                         <div class="curtidas">
                             <img src={post.likeimg} alt={post.likeuser}/>
-                            <div class="texto">
-                                Curtido por <strong>{post.likeuser}</strong> e <strong>outras <p data-test="likes-number" class="num-curtidas">{post.likenum}</p> pessoas</strong>
+                            <div class="texto" data-test="likes-number">
+                                Curtido por <strong>{post.likeuser}</strong> e <strong>outras <p class="num-curtidas">{post.likenum}</p> pessoas</strong>
                             </div>
                         </div>
                     </div>
