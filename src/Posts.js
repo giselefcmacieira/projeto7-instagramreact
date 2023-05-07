@@ -62,7 +62,7 @@ export default function Posts(){
                         </div>
                     </div>
                     <div class="conteudo">
-                        <img src={post.postimg} alt={post.postalt} onClick={curtidaImg}/>
+                        <img src={post.postimg} alt={post.postalt} onDoubleClick={curtidaImg}/>
                     </div>
                     <div class="fundo">
                         <div class="acoes">
