@@ -6,7 +6,8 @@ export default function Posts(){
     {like: "heart-outline", class: 'preto', imguser: "assets/img/Tony.jpg", user: "Tony0154", postimg: "assets/img/Post1.jpg", postalt: "rick-going-to-poop", likeimg: "assets/img/Rick.sanchez.jpg", likeuser: "rick-sanchez", likenum: '15'},
     {like: "heart-outline", class: 'preto', imguser: "assets/img/Rick-simplao.jpg", user: "rick-simplaao", postimg: "assets/img/Post3.jpg", postalt: "Beth's Birthday", likeimg: "assets/img/dark-beth.jpg", likeuser: "dark-beth", likenum: '20'}];
     
-    const salvar = (event) => {
+    function salvar(event){
+        console.log(event);
         if(event.currentTarget.name === "bookmark-outline"){
             event.currentTarget.name = 'bookmark';
         }else{
@@ -14,7 +15,7 @@ export default function Posts(){
         }
     }
 
-    const curtida = (event) => {
+    function curtida(event){
         const post = event.currentTarget.parentNode.parentNode.parentNode;
         const nCurtidas = post.querySelector('.num-curtidas');
         const numCurtidas = nCurtidas.innerHTML
@@ -32,18 +33,16 @@ export default function Posts(){
         }
     }
 
-    const curtidaImg = (event) => {
-        
+    function curtidaImg(event){
+        console.log(event);
         const post = event.currentTarget.parentNode.parentNode;
-        console.log(post);
-        const curtida = post.querySelector('.curtida');
-        console.log(curtida);
-        const numCurtida = post.querySelector('.num-curtidas');
-        const numCurtidas = numCurtida.innerHTML;
-        const numCurtidasAtual = Number(numCurtidas) + 1;
-        if(curtida.name === 'heart-outline'){
-            numCurtida.innerHTML = numCurtidasAtual;
-        }
+        const curtida = post.querySelector('.curtida'); //icone de coração(like)
+        const numCurtida = post.querySelector('.num-curtidas'); //paragrafo onde tem o número de curtidas
+        const numCurtidas = numCurtida.innerHTML; //número de curtidas
+        const numCurtidasAtual = Number(numCurtidas) + 1; //número de curtidas após interção com a imagem
+        if(curtida.name === 'heart-outline'){ //caso o post esteja descurtido
+            numCurtida.innerHTML = numCurtidasAtual; //alterar o número de curtidas
+        } //se o post já etiver curtido nada acontece
         curtida.classList.add('vermelho');
         curtida.name = 'heart';
     }
@@ -78,8 +77,8 @@ export default function Posts(){
 
                         <div class="curtidas">
                             <img src={post.likeimg} alt={post.likeuser}/>
-                            <div class="texto" data-test="likes-number">
-                                Curtido por <strong>{post.likeuser}</strong> e <strong>outras <p class="num-curtidas">{post.likenum}</p> pessoas</strong>
+                            <div class="texto">
+                                Curtido por <strong>{post.likeuser}</strong> e <strong>outras <p class="num-curtidas" data-test="likes-number">{post.likenum}</p> pessoas</strong>
                             </div>
                         </div>
                     </div>
