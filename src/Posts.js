@@ -2,9 +2,9 @@ import React from 'react'
 
 export default function Posts(){
 
-    let infPosts = [{like: "heart-outline", class: 'preto', imguser: "assets/img/devil.jpg", user: "the.devil", postimg: "assets/img/Post1--.jpg", postalt: "summer-and-the-devil", likeimg: "assets/img/Joyce-smith.jpg", likeuser: "joice.smith", likenum: '101523'},
-    {like: "heart-outline", class: 'preto', imguser: "assets/img/Tony.jpg", user: "Tony0154", postimg: "assets/img/Post1.jpg", postalt: "rick-going-to-poop", likeimg: "assets/img/Rick.sanchez.jpg", likeuser: "rick-sanchez", likenum: '99159'},
-    {like: "heart-outline", class: 'preto', imguser: "assets/img/Rick-simplao.jpg", user: "rick-simplaao", postimg: "assets/img/Post3.jpg", postalt: "Beth's Birthday", likeimg: "assets/img/dark-beth.jpg", likeuser: "dark-beth", likenum: '87875'}];
+    let infPosts = [{like: "heart-outline", class: 'preto', imguser: "assets/img/devil.jpg", user: "the.devil", postimg: "assets/img/Post1--.jpg", postalt: "summer-and-the-devil", likeimg: "assets/img/Joyce-smith.jpg", likeuser: "joice.smith", likenum: '10'},
+    {like: "heart-outline", class: 'preto', imguser: "assets/img/Tony.jpg", user: "Tony0154", postimg: "assets/img/Post1.jpg", postalt: "rick-going-to-poop", likeimg: "assets/img/Rick.sanchez.jpg", likeuser: "rick-sanchez", likenum: '15'},
+    {like: "heart-outline", class: 'preto', imguser: "assets/img/Rick-simplao.jpg", user: "rick-simplaao", postimg: "assets/img/Post3.jpg", postalt: "Beth's Birthday", likeimg: "assets/img/dark-beth.jpg", likeuser: "dark-beth", likenum: '20'}];
     
     const salvar = (event) => {
         if(event.currentTarget.name === "bookmark-outline"){
