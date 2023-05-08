@@ -60,7 +60,7 @@ export default function Posts(){
                 <div data-test="post" class="post">
                     <div class="topo">
                         <div class="usuario">
-                            <img data-test="post-image" src={post.imguser} alt={post.user}/>
+                            <img src={post.imguser} alt={post.user}/>
                             {post.user}
                         </div>
                         <div class="acoes">
@@ -69,7 +69,7 @@ export default function Posts(){
                     </div>
                     <div class="conteudo">
                         <img class="coracao hide" src="assets/img/heart.png" onDoubleClick={curtidaImg}/>
-                        <img class="postimg"src={post.postimg} alt={post.postalt} onDoubleClick={curtidaImg}/>
+                        <img data-test="post-image" class="postimg" src={post.postimg} alt={post.postalt} onDoubleClick={curtidaImg}/>
                     </div>
                     <div class="fundo">
                         <div class="acoes">
