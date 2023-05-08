@@ -2,9 +2,9 @@ import React from 'react'
 
 export default function Posts(){
 
-    let infPosts = [{like: "heart-outline", class: 'preto', imguser: "assets/img/devil.jpg", user: "the.devil", postimg: "assets/img/Post1--.jpg", postalt: "summer-and-the-devil", likeimg: "assets/img/Joyce-smith.jpg", likeuser: "joice.smith", likenum: '10'},
-    {like: "heart-outline", class: 'preto', imguser: "assets/img/Tony.jpg", user: "Tony0154", postimg: "assets/img/Post1.jpg", postalt: "rick-going-to-poop", likeimg: "assets/img/Rick.sanchez.jpg", likeuser: "rick-sanchez", likenum: '15'},
-    {like: "heart-outline", class: 'preto', imguser: "assets/img/Rick-simplao.jpg", user: "rick-simplaao", postimg: "assets/img/Post3.jpg", postalt: "Beth's Birthday", likeimg: "assets/img/dark-beth.jpg", likeuser: "dark-beth", likenum: '20'}];
+    let infPosts = [{like: "heart-outline", class: 'preto', imguser: "assets/img/devil.jpg", user: "the.devil", postimg: "assets/img/Post1--.jpg", postalt: "summer-and-the-devil", likeimg: "assets/img/Joyce-smith.jpg", likeuser: "joice.smith", likenum: '17'},
+    {like: "heart-outline", class: 'preto', imguser: "assets/img/Tony.jpg", user: "Tony0154", postimg: "assets/img/Post1.jpg", postalt: "rick-going-to-poop", likeimg: "assets/img/Rick.sanchez.jpg", likeuser: "rick-sanchez", likenum: '32'},
+    {like: "heart-outline", class: 'preto', imguser: "assets/img/Rick-simplao.jpg", user: "rick-simplaao", postimg: "assets/img/Post3.jpg", postalt: "Beth's Birthday", likeimg: "assets/img/dark-beth.jpg", likeuser: "dark-beth", likenum: '25'}];
     
     function salvar(event){
         console.log(event);
@@ -41,6 +41,7 @@ export default function Posts(){
         const coracao = post.querySelector('.coracao');
         const numCurtidas = numCurtida.innerHTML; //número de curtidas
         const numCurtidasAtual = Number(numCurtidas) + 1; //número de curtidas após interção com a imagem
+        console.log(typeof(numCurtidasAtual));
         if(curtida.name === 'heart-outline'){ //caso o post esteja descurtido
             numCurtida.innerHTML = numCurtidasAtual; //alterar o número de curtidas
             coracao.classList.remove('hide');
