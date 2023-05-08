@@ -181,6 +181,9 @@
   .post .conteudo img {
     width: 100%;
   }
+  .post .conteudo{
+    position: relative;
+  }
   
   .post .fundo .acoes {
     display: flex;
@@ -318,4 +321,21 @@
   }
   .num-curtidas{
     display: inline;
+  }
+  .hide{
+    display: none;
+  }
+  .coracao{
+    position: absolute;
+    padding: 250px;
+    top: 20px;
+    left: 20px;
+  }
+  .animacao-like{
+    animation-name: animacao;
+    animation-duration: 0.5s;
+  }
+  @keyframes animacao{
+    from {transform: scale(0.2)}
+    to {transform: scale(1)}
   }

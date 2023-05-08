@@ -38,14 +38,20 @@ export default function Posts(){
         const post = event.currentTarget.parentNode.parentNode;
         const curtida = post.querySelector('.curtida'); //icone de coração(like)
         const numCurtida = post.querySelector('.num-curtidas'); //paragrafo onde tem o número de curtidas
+        const coracao = post.querySelector('.coracao');
         const numCurtidas = numCurtida.innerHTML; //número de curtidas
         const numCurtidasAtual = Number(numCurtidas) + 1; //número de curtidas após interção com a imagem
         if(curtida.name === 'heart-outline'){ //caso o post esteja descurtido
             numCurtida.innerHTML = numCurtidasAtual; //alterar o número de curtidas
+            coracao.classList.remove('hide');
+            coracao.classList.add('animacao-like');
+            setTimeout(() => coracao.classList.add('hide'),500);
         } //se o post já etiver curtido nada acontece
         curtida.classList.add('vermelho');
         curtida.name = 'heart';
     }
+
+
 
     return(
         <div class="posts">
@@ -61,7 +67,8 @@ export default function Posts(){
                         </div>
                     </div>
                     <div class="conteudo">
-                        <img src={post.postimg} alt={post.postalt} onDoubleClick={curtidaImg}/>
+                        <img class="coracao hide" src="assets/img/heart.png" onDoubleClick={curtidaImg}/>
+                        <img class="postimg"src={post.postimg} alt={post.postalt} onDoubleClick={curtidaImg}/>
                     </div>
                     <div class="fundo">
                         <div class="acoes">
